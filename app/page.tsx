@@ -291,13 +291,21 @@ export default function Dashboard() {
                       cx="50%"
                       cy="50%"
                       outerRadius={100}
+                      label={{
+                        position: 'outside',
+                        fontSize: 14,
+                        fontWeight: 'bold',
+                      }}
+                      labelLine={{
+                        stroke: '#666',
+                        strokeWidth: 1,
+                      }}
                     >
                       {chartData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>
                     <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
-                    <Legend />
                   </RePieChart>
                 </ResponsiveContainer>
               </div>
